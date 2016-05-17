@@ -30,7 +30,7 @@ Algorithm accepts several parameters on compilation level which are:
   * hashFunction_rand (not recommended)
   * hashFunction_old (not recommended)
 
-Usually to compile the code used needs to run below line:
+To compile the code run below line (example):
 
 ```shell
 g++ -O3 -std=c++11 -lpthread -pthread -DVARIANT=1 -DNUMBER_OF_THREADS=4 -DHASH_FUNCTION=hashFunction_h1h2 -o bloom_faoso_std_h1h2_th4 bloom_faoso.cpp xxhash.h xxhash.cpp -L ./ -I ./ -lrt 
