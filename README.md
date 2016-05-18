@@ -24,7 +24,7 @@ Algorithm accepts several parameters on compilation level which are:
   * STANDARD (1) - STD
   * EVERY_G_QGRAM (2) - SAM
   * ON_MINIMIZERS (3) - MSAM
-* NUMBER_OF_THREADS (1, 2, 4, etc.) - number of threads used in index building process
+* NUMBER_OF_THREADS - number of threads used in index building process
 
 To compile the code run below line (example):
 
