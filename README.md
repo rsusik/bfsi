@@ -2,7 +2,7 @@
 
 ## About
 
-This is a source code of Bloom filter based semi-index on *q*-grams. It was written for research (http://arxiv.org/abs/1507.02989) purpose and has a minimal error checking. The code and may be not very readable and comments may not be adequate. There is no warranty, your use of this code is at your own risk. BFSI use FAOSO for verification (searching in block) which was originally written by Kimmo Fredriksson.
+This is a source code of Bloom filter based semi-index on *q*-grams. It was written for research (http://arxiv.org/abs/1507.02989) purpose and has a minimal error checking. The code may be not very readable and comments may not be adequate. There is no warranty, your use of this code is at your own risk. BFSI use FAOSO for verification (searching in block) which was originally written by Kimmo Fredriksson.
 
 There are three variants of BFSI:
 * STD
