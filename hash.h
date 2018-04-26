@@ -205,7 +205,7 @@ namespace bloom {
 	uint32_t hashFunction_h1h2(int i, unsigned char* str) {
 		uint32_t h1 = murmur3_32(str, strlen((const char *)str), 0);
 		uint32_t h2 = murmur3_32(str, strlen((const char *)str), h1);
-		return abs(h1 + i * h2);
+		return llabs(h1 + i * h2);
 	}
 
 	inline uint32_t hashFunction(int i, unsigned char* str) {
