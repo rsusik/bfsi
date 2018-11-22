@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
 	unsigned int 
 		m = pattern_size = atoi(argv[2]);
 	char bf_filename[500];
-	sprintf(bf_filename, "%s_q%d_bs%d_c%d_m%d_g%d_p%d_w%d.bf", text_filename, q_size, block_size, c, bloom::getSizeOfOverlay(m, q_size), g, p, w_size);
+	sprintf(bf_filename, "%s_q%d_bs%lu_c%d_m%d_g%d_p%d_w%d.bf", text_filename, q_size, block_size, c, bloom::getSizeOfOverlay(m, q_size), g, p, w_size);
 	char *patterns_filename = argv[1];
 
 	// Read data from files

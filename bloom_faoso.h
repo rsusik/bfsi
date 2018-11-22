@@ -15,7 +15,7 @@ namespace bloom_faoso {
 		std::cout << ver_count << "\t" << matches << "\t";													// search information
 		std::cout << build_time << "\t" << bloom_time << "\t" << faoso_time << "\t" << full_time << "\t" ;	// times
 		std::cout << inmb/build_time << "\t" << inmb/bloom_time << "\t" << inmb/faoso_time << "\t" << inmb/full_time << "\t";// speed
-		std::cout << number_of_unique_qgrams << "\t";
+		//std::cout << number_of_unique_qgrams << "\t";
 		std::cout << std::endl;
 	}
 }

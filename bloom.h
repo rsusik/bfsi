@@ -49,7 +49,7 @@ namespace bloom {
 			printf("t->length = %d\n", t->length);
 			printf("t->length_ext = %d\n", t->length_ext);
 			printf("t->max_m = %d\n", t->max_m);
-			printf("t->block_size = %d\n", t->block_size);
+			printf("t->block_size = %lu\n", t->block_size);
 		}
 
 	};
@@ -700,7 +700,7 @@ namespace bloom {
 
 		if(res->length * sizeof(long) > 0) {
 			res->blocks_to_verify = (long*)realloc(res->blocks_to_verify, res->length * sizeof(long));
-			if(res->blocks_to_verify==NULL) { printf("Error: findBlocksMinimizers -> Cannot allocate memory (%d) for res->blocks_to_verify\n", res->length * sizeof(long) ); exit(1); }
+			if(res->blocks_to_verify==NULL) { printf("Error: findBlocksMinimizers -> Cannot allocate memory (%lu) for res->blocks_to_verify\n", res->length * sizeof(long) ); exit(1); }
 		}
 
 		for (long i = 0; i < number_of_blocks; i++) {
@@ -810,7 +810,7 @@ namespace bloom {
 			if (blocks_to_verify[i]) {
 				++(result)->length;
 				(result)->blocks_to_verify = (long*)realloc((result)->blocks_to_verify, (result)->length * sizeof(long));
-				if((result)->blocks_to_verify==NULL && (result)->length * sizeof(long)!=0) { printf("Error: findBlocks -> Cannot allocate memory (%d) for res->blocks_to_verify (number_of_64bit_elements=%d, number_of_blocks=%d, q_grams_number=%d)\n", (result)->length * sizeof(long), number_of_64bit_elements, number_of_blocks, q_grams_number ); exit(1); }
+				if((result)->blocks_to_verify==NULL && (result)->length * sizeof(long)!=0) { printf("Error: findBlocks -> Cannot allocate memory (%lu) for res->blocks_to_verify (number_of_64bit_elements=%u, number_of_blocks=%u, q_grams_number=%d)\n", (result)->length * sizeof(long), number_of_64bit_elements, number_of_blocks, q_grams_number ); exit(1); }
 				(result)->blocks_to_verify[j++] = i;
 			}
 		}

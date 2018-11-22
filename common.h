@@ -123,17 +123,13 @@ t.sum += t.stop - t.start
 #define log2cache 70000
 word log2v[log2cache];
 
-const unsigned int MAX_WORD_SIZE = sizeof(word)*8;//, U = 16;
+const unsigned int MAX_WORD_SIZE = sizeof(word)*8;
 
-inline int clz64(unsigned long *out, uint64_t in) {
+inline void clz64(unsigned long *out, uint64_t in) {
 #ifdef UNIX
-//	printf("sizeof(uint64_T)=%d\n", sizeof(uint64_t)); fflush(stdout);
-//	*out = __builtin_clzll(in);
 	*out = __builtin_ffsll(in) - 1;
-//	printf("*out=%d, in=%d\n", *out, in);
-	//printf("__builtin_ffsll(2)=%d\n", __builtin_ffsll((uint64_t)2)); fflush(stdout);
 #else
-	return _BitScanReverse64(out,in);
+	_BitScanReverse64(out,in); // not tested
 #endif
 }
 

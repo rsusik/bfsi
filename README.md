@@ -14,6 +14,8 @@ There are three variants of BFSI:
 * C++ compiler compatible with C++11 standard
 * Unix based 64-bit OS (compilation works also in Cygwin)
 * Multithreading CPU
+* Python 3 (for testing)
+* Docker (optionally)
 
 
 
@@ -57,6 +59,63 @@ For more details please refer to mentioned paper.
 Example:
 ```bash
 ./bloom_faoso_std_h1h2_th4 /media/disk1/patterns.m16 16 /media/disk1/english.200MB 8 2 6 5 8192 6 1 0 0
+```
+
+## Testing
+
+The `test.py` script can be used for testing. The syntax is following:
+
+```
+usage: test.py [-h] [-r R] [-a A] [-c C] [-m M] [-u U] [-k K] [-q Q] [-s S]
+               [-b B] [-cp CP] [-g G] [-p P] [-w W]
+
+BFSI testing script.
+
+optional arguments:
+  -h, --help           show this help message and exit
+  -r R, --npatterns R  number of patterns
+  -a A, --algorithm A  algorithm[s] to be tested
+  -c C, --corpus C     corpus
+  -m M, --length M     pattern length[s] (e.g. 8,16,32)
+  -u U, --faosou U     FAOSO parameter U
+  -k K, --faosok K     FAOSO parameter k
+  -q Q, --q-gram Q     q-gram size
+  -s S, --sigma S      dest. alph. size (sigma)
+  -b B, --bsize B      block size
+  -cp CP, --cparam CP  c param
+  -g G, --gparam G     g param
+  -p P, --pparam P     p param
+  -w W, --wsize W      w param
+```
+
+Usage:
+
+```
+python3 test.py -a bloom_faoso_std_h1h2_th6 -c dna.100MB -m 32,64 -q 4,6,8 -u 4,8 -k 1,2 -b 8192
+```
+
+## Docker
+The simplest way you can test the algorithm is by using docker. All you need to do is to:
+
+* Clone the git repository:
+```shell
+git clone https://github.com/rsusik/bfsi bfsi
+cd bfsi
+```
+
+* Build the image:
+```shell
+docker build -t bfsi .
+```
+
+* Run container:
+```shell
+docker run --rm bfsi
+```
+
+* Additionally you may add parameters:
+```shell
+docker run --rm bfsi -a bloom_faoso_min_h1h2_th6 -c english.100MB -m 32 -r 100 -q 10 -u 4 -k 2 -cp 6 -p 2 -w 4 -b 8192
 ```
 
 ## Citing BFSI
