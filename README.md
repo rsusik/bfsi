@@ -59,6 +59,19 @@ Example:
 ./bloom_faoso_std_h1h2_th4 /media/disk1/patterns.m16 16 /media/disk1/english.200MB 8 2 6 5 8192 6 1 0 0
 ```
 
+## Citing BFSI
+	@article {GSR17,
+		author   = {{Sz.} Grabowski and R. Susik and M. Raniszewski},
+		title    = {A {B}loom Filter based Semi-Index on $q$-grams},
+		journal  = {Software: Practice and Experience},
+		volume   = {47},
+		number   = {6},
+		issn     = {1097-024X},
+		year     = {2017},
+		pages    = {799--811}
+	}
+
+
 ## Authors
 
 * Szymon Grabowski
