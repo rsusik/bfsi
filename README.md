@@ -14,8 +14,8 @@ There are three variants of BFSI:
 * C++ compiler compatible with C++11 standard
 * Unix based 64-bit OS (compilation works also in Cygwin)
 * Multithreading CPU
-* Python 3 (for testing)
-* Docker (optionally)
+* Python 3 (for [testing](#testing))
+* [Docker](#docker) (optionally)
 
 
 
@@ -97,16 +97,24 @@ python3 test.py -a bloom_faoso_std_h1h2_th6 -c dna.100MB -m 32,64 -q 4,6,8 -u 4,
 ## Docker
 The simplest way you can test the algorithm is by using docker. All you need to do is to:
 
-* Clone the git repository:
-```shell
-git clone https://github.com/rsusik/bfsi bfsi
-cd bfsi
-```
+* Pull or build the image:
 
-* Build the image:
-```shell
-docker build -t bfsi .
-```
+	* Pull from repository steps:
+	```
+	docker pull rsusik/mag
+	docker tag docker.io/rsusik/bfsi bfsi
+	```
+
+	* Build steps:
+		* Clone the git repository:
+		```shell
+		git clone https://github.com/rsusik/bfsi bfsi
+		cd bfsi
+		```
+		* Build the image:
+		```shell
+		docker build -t bfsi .
+		```
 
 * Run container:
 ```shell
