@@ -101,7 +101,7 @@ The simplest way you can test the algorithm is by using docker. All you need to 
 
 	* Pull from repository steps:
 	```
-	docker pull rsusik/mag
+	docker pull rsusik/bfsi
 	docker tag docker.io/rsusik/bfsi bfsi
 	```
 
